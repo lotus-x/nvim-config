@@ -42,8 +42,8 @@ null_ls.setup({
 
 		-- css
 
-		null_ls.builtins.diagnostics.stylelint,
-		null_ls.builtins.formatting.stylelint,
+		-- null_ls.builtins.diagnostics.stylelint,
+		-- null_ls.builtins.formatting.stylelint,
 	},
 	diagnostics_format = "[#{c}] #{m} (#{s})",
 })
