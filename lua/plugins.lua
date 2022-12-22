@@ -115,7 +115,7 @@ return require("packer").startup({
 
 		use("folke/which-key.nvim")
 
-		use("voldikss/vim-floaterm")
+		use("akinsho/toggleterm.nvim")
 
 		-- use("https://git.sr.ht/~whynothugo/lsp_lines.nvim")
 
