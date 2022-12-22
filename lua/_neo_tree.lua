@@ -6,20 +6,20 @@ vim.g.loaded_netrwPlugin = 1
 vim.opt.termguicolors = true
 
 require("neo-tree").setup({
-  close_if_last_window = true,
-  filesystem = {
-    filtered_items = {
-      hide_dotfiles = false,
-      hide_gitignored = false,
-    },
-    follow_current_file = true,
-    group_empty_dirs = true,
-    -- use_libuv_file_watcher = false,
-  },
-  buffers = {
-    follow_current_file = true,
-    group_empty_dirs = true,
-  },
+	close_if_last_window = true,
+	filesystem = {
+		filtered_items = {
+			hide_dotfiles = false,
+			hide_gitignored = false,
+		},
+		follow_current_file = true,
+		group_empty_dirs = true,
+		use_libuv_file_watcher = true,
+	},
+	buffers = {
+		follow_current_file = true,
+		group_empty_dirs = true,
+	},
 })
 
 vim.keymap.set("n", "<leader>e", ":Neotree<CR>")
