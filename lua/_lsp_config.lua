@@ -61,24 +61,27 @@ local lsp_flags = {
 	debounce_text_changes = 150,
 }
 
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities.textDocument.completion.completionItem.snippetSupport = true
+local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 require("lspconfig").dockerls.setup({
 	on_attach = on_attach,
 	flags = lsp_flags,
+	capabilities = capabilities,
 })
 require("lspconfig").golangci_lint_ls.setup({
 	on_attach = on_attach,
 	flags = lsp_flags,
+	capabilities = capabilities,
 })
 require("lspconfig").gopls.setup({
 	on_attach = on_attach,
 	flags = lsp_flags,
+	capabilities = capabilities,
 })
 require("lspconfig").sumneko_lua.setup({
 	on_attach = on_attach,
 	flags = lsp_flags,
+	capabilities = capabilities,
 	settings = {
 		Lua = {
 			runtime = {
@@ -99,6 +102,7 @@ require("lspconfig").sumneko_lua.setup({
 require("lspconfig").jsonls.setup({
 	on_attach = on_attach,
 	flags = lsp_flags,
+	capabilities = capabilities,
 	settings = {
 		json = {
 			schemas = require("schemastore").json.schemas(),
@@ -109,14 +113,17 @@ require("lspconfig").jsonls.setup({
 require("lspconfig").hls.setup({
 	on_attach = on_attach,
 	flags = lsp_flags,
+	capabilities = capabilities,
 })
 require("lspconfig").vimls.setup({
 	on_attach = on_attach,
 	flags = lsp_flags,
+	capabilities = capabilities,
 })
 require("lspconfig").tailwindcss.setup({
 	on_attach = on_attach,
 	flags = lsp_flags,
+	capabilities = capabilities,
 })
 require("lspconfig").cssls.setup({
 	on_attach = on_attach,
@@ -126,8 +133,12 @@ require("lspconfig").cssls.setup({
 require("lspconfig").cssmodules_ls.setup({
 	on_attach = on_attach,
 	flags = lsp_flags,
+	capabilities = capabilities,
 })
-require("lspconfig").tsserver.setup({
-	on_attach = on_attach,
-	flags = lsp_flags,
+require("typescript").setup({
+	server = {
+		on_attach = on_attach,
+		flags = lsp_flags,
+		capabilities = capabilities,
+	},
 })

@@ -37,6 +37,7 @@ require("mason-null-ls").setup({
 		"stylua",
 		"selene",
 		"prettier",
+		"xo",
 	},
 })
 

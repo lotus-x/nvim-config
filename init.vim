@@ -64,3 +64,14 @@ nnoremap <C-Tab> :bn<CR>
 nnoremap <C-S-Tab> :bp<CR>
 nnoremap <C-`> :b#<CR>
 
+" for go template syntax highlighting
+function DetectGoHtmlTmpl()
+    if expand('%:e') == "html" && search("{{") != 0
+        setfiletype gohtmltmpl
+    endif
+endfunction
+
+augroup filetypedetect
+    " gohtmltmpl
+    au BufRead,BufNewFile *.html call DetectGoHtmlTmpl()
+augroup END

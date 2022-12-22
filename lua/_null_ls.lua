@@ -1,5 +1,25 @@
 local null_ls = require("null-ls")
 
+local eslint_condition = function(utils)
+	return utils.root_has_file({
+		".eslintrc.js",
+		".eslintrc.cjs",
+		".eslintrc.yaml",
+		".eslintrc.yml",
+		".eslintrc.json",
+	})
+end
+local xo_condition = function(utils)
+	return utils.root_has_file({
+		".xo-config",
+		".xo-config.json",
+		".xo-config.js",
+		"xo.config.js",
+		".xo-config.cjs",
+		"xo-config.cjs",
+	})
+end
+
 null_ls.setup({
 	sources = {
 		-- ------------------------------------------------------------------ --
@@ -35,10 +55,24 @@ null_ls.setup({
 		-- typescript/javascript
 
 		null_ls.builtins.formatting.prettier,
-		null_ls.builtins.code_actions.eslint,
-		null_ls.builtins.diagnostics.eslint,
+		null_ls.builtins.code_actions.eslint.with({
+			condition = eslint_condition,
+			prefer_local = "node_modules/.bin",
+		}),
+		null_ls.builtins.diagnostics.eslint.with({
+			condition = eslint_condition,
+			prefer_local = "node_modules/.bin",
+		}),
 		null_ls.builtins.diagnostics.tsc,
-		null_ls.builtins.formatting.eslint,
+		require("typescript.extensions.null-ls.code-actions"),
+		null_ls.builtins.code_actions.xo.with({
+			condition = xo_condition,
+			prefer_local = "node_modules/.bin",
+		}),
+		null_ls.builtins.diagnostics.xo.with({
+			condition = xo_condition,
+			prefer_local = "node_modules/.bin",
+		}),
 
 		-- css
 
