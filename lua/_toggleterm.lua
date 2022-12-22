@@ -17,19 +17,21 @@ vim.cmd("autocmd! TermOpen term://* lua set_terminal_keymaps()")
 
 local Terminal = require("toggleterm.terminal").Terminal
 
+local update_neo_tree_git_status = function()
+	require("neo-tree.events").fire_event("git_event")
+end
+
 local lazygit = Terminal:new({
 	cmd = "lazygit",
 	hidden = true,
 	direction = "float",
 	highlights = {
-		Normal = {
-			guibg = "#24273a",
-		},
 		NormalFloat = {
 			guibg = "#24273a",
 			guifg = "#cad3f5",
 		},
 	},
+	on_close = update_neo_tree_git_status,
 })
 function _lazygit_toggle()
 	lazygit:toggle()
@@ -39,6 +41,7 @@ local gitui = Terminal:new({
 	cmd = "gitui -t latte.ron",
 	hidden = true,
 	direction = "float",
+	on_close = update_neo_tree_git_status,
 })
 function _gitui_toggle()
 	gitui:toggle()
