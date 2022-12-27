@@ -61,19 +61,15 @@ local lsp_flags = {
 	debounce_text_changes = 150,
 }
 
+-- local lspconfig = require("lspconfig")
+-- local lsp_defaults = lspconfig.util.default_config
+--
+-- local capabilities =
+-- 	vim.tbl_deep_extend("force", lsp_defaults.capabilities, require("cmp_nvim_lsp").default_capabilities())
+
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 require("lspconfig").dockerls.setup({
-	on_attach = on_attach,
-	flags = lsp_flags,
-	capabilities = capabilities,
-})
-require("lspconfig").golangci_lint_ls.setup({
-	on_attach = on_attach,
-	flags = lsp_flags,
-	capabilities = capabilities,
-})
-require("lspconfig").gopls.setup({
 	on_attach = on_attach,
 	flags = lsp_flags,
 	capabilities = capabilities,
@@ -141,4 +137,12 @@ require("typescript").setup({
 		flags = lsp_flags,
 		capabilities = capabilities,
 	},
+})
+require("go").setup({
+	lsp_cfg = {
+		on_attach = on_attach,
+		flags = lsp_flags,
+		capabilities = capabilities,
+	},
+	luasnip = true,
 })

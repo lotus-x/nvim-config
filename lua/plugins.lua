@@ -143,7 +143,13 @@ return require("packer").startup({
 				"rcarriga/nvim-notify",
 			},
 		})
-		use("fatih/vim-go")
+
+		use({
+			"ray-x/go.nvim",
+			"ray-x/guihua.lua",
+		})
+
+		use("echasnovski/mini.nvim")
 
 		if packer_bootstrap then
 			require("packer").sync()

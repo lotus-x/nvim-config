@@ -5,6 +5,7 @@ set shiftwidth=2
 set expandtab
 set autoindent
 set clipboard+=unnamedplus
+set nowrap
 
 lua require('plugins')
 
@@ -13,7 +14,6 @@ colorscheme catppuccin
 
 lua require('_telescope')
 lua require('_lualine')
-"lua require('_nvimtree')
 lua require('_neo_tree')
 lua require('_treesitter')
 
@@ -40,6 +40,7 @@ lua require('_notify')
 lua require('_saga')
 lua require('_spectre')
 lua require('_noice')
+lua require('_mini')
 
 nnoremap <A-j> :m .+1<CR>==
 nnoremap <A-k> :m .-2<CR>==

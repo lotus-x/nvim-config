@@ -28,5 +28,6 @@ require("catppuccin").setup({
 			enabled = true,
 			enable_ui = true,
 		},
+		mini = true,
 	},
 })

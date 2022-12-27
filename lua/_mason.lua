@@ -11,8 +11,6 @@ require("mason").setup({
 require("mason-lspconfig").setup({
 	ensure_installed = {
 		"dockerls",
-		"golangci_lint_ls",
-		"gopls",
 		"sumneko_lua",
 		"jsonls",
 		"hls",
@@ -28,7 +26,7 @@ require("mason-null-ls").setup({
 	ensure_installed = {
 		"cspell",
 		"golangci_lint",
-		"revive",
+		-- "revive",
 		"staticcheck",
 		"gofmt",
 		"goimports",
