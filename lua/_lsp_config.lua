@@ -145,4 +145,7 @@ require("go").setup({
 		capabilities = capabilities,
 	},
 	luasnip = true,
+	dap_debug_keymap = false,
+	lsp_keymaps = false,
+	icons = false,
 })

@@ -3,6 +3,9 @@ local saga = require("lspsaga")
 
 saga.init_lsp_saga({
 	custom_kind = require("catppuccin.groups.integrations.lsp_saga").custom_kind(),
+	code_action_lightbulb = {
+		enable = false,
+	},
 })
 
 -- Lsp finder find the symbol definition implement reference
