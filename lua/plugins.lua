@@ -62,6 +62,7 @@ return require("packer").startup({
 			"mfussenegger/nvim-dap",
 			"rcarriga/nvim-dap-ui",
 			"jayp0521/mason-nvim-dap.nvim",
+			"theHamsta/nvim-dap-virtual-text",
 			"jose-elias-alvarez/null-ls.nvim",
 			"jayp0521/mason-null-ls.nvim",
 			"jose-elias-alvarez/typescript.nvim",
@@ -150,6 +151,13 @@ return require("packer").startup({
 		})
 
 		use("echasnovski/mini.nvim")
+
+		use({
+			"folke/todo-comments.nvim",
+			requires = "nvim-lua/plenary.nvim",
+		})
+
+		use("LudoPinelli/comment-box.nvim")
 
 		if packer_bootstrap then
 			require("packer").sync()

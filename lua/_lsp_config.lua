@@ -140,9 +140,9 @@ require("typescript").setup({
 })
 require("go").setup({
 	lsp_cfg = {
+		capabilities = capabilities,
 		on_attach = on_attach,
 		flags = lsp_flags,
-		capabilities = capabilities,
 	},
 	luasnip = true,
 	dap_debug_keymap = false,

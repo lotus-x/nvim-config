@@ -30,6 +30,7 @@ require("mason-null-ls").setup({
 		"staticcheck",
 		"gofmt",
 		"goimports",
+		"goimports-reviser",
 		"goimports_reviser",
 		"golines",
 		"stylua",

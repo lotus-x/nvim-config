@@ -23,3 +23,5 @@ end, opts)
 vim.keymap.set("n", "<Leader>dr", dap.repl.open, opts)
 vim.keymap.set("n", "<Leader>dl", dap.run_last, opts)
 vim.keymap.set("n", "<Leader>dh", require("dap.ui.widgets").hover, opts)
+
+require("nvim-dap-virtual-text").setup()

@@ -15,4 +15,4 @@ vim.keymap.set("n", "<Leader>mr", map.refresh)
 vim.keymap.set("n", "<Leader>ms", map.toggle_side)
 vim.keymap.set("n", "<Leader>mt", map.toggle)
 
-require("mini.sessions").setup({})
+-- require("mini.sessions").setup({})
