@@ -7,6 +7,24 @@ set autoindent
 set clipboard+=unnamedplus
 set nowrap
 
+" neocide configuration
+if exists("g:neovide")
+    set guifont=FiraCode\ Nerd\ Font:h9
+    let g:neovide_hide_mouse_when_typing = v:true
+    " let g:neovide_refresh_rate = 144
+    " let g:neovide_refresh_rate_idle = 60
+    let g:neovide_no_idle = v:true
+    let g:neovide_cursor_vfx_mode = "pixiedust"
+    let g:neovide_cursor_vfx_mode = "sonicboom"
+
+    let g:neovide_scale_factor = 1.0
+    function! ChangeScaleFactor(delta)
+      let g:neovide_scale_factor = g:neovide_scale_factor * a:delta
+    endfunction
+    nnoremap <expr><C-=> ChangeScaleFactor(1.25)
+    nnoremap <expr><C--> ChangeScaleFactor(1/1.25)
+endif
+
 lua require('plugins')
 
 lua require('_catppuccin')
@@ -75,3 +93,4 @@ augroup filetypedetect
     " gohtmltmpl
     au BufRead,BufNewFile *.html call DetectGoHtmlTmpl()
 augroup END
+
