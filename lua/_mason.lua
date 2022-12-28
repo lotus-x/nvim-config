@@ -19,6 +19,7 @@ require("mason-lspconfig").setup({
 		"cssls",
 		"cssmodules_ls",
 		"tsserver",
+		"golangci_lint_ls",
 	},
 })
 

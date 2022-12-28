@@ -30,7 +30,7 @@ require("catppuccin").setup({
 		},
 		mini = true,
 	},
-	styles = {
-		comments = {},
-	},
+	-- styles = {
+	-- 	comments = {},
+	-- },
 })

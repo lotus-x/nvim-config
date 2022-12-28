@@ -1,0 +1,16 @@
+{
+  "struct constructor": {
+    "prefix": "scon",
+    "body": [
+      "func New${1:Struct}(${2}) ${3}${1}{",
+      "\t// create struct",
+      "\t${4:struct} := ${1}{",
+      "\t\t${5}",
+      "\t}",
+      "\t// return",
+      "\treturn ${3/[\\*]/&/}${4}",
+      "}"
+    ],
+    "description": "Struct constructor for DDD design"
+  }
+}

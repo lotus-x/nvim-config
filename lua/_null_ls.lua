@@ -35,7 +35,7 @@ null_ls.setup({
 		--                                 go                                 --
 		-- ------------------------------------------------------------------ --
 
-		null_ls.builtins.diagnostics.golangci_lint,
+		-- null_ls.builtins.diagnostics.golangci_lint,
 		-- null_ls.builtins.diagnostics.revive,
 		null_ls.builtins.diagnostics.staticcheck,
 		null_ls.builtins.formatting.gofmt,

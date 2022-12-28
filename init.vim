@@ -59,6 +59,9 @@ lua require('_whichkey')
 lua require('_toggleterm')
 lua require('_spectre')
 lua require('_mini')
+lua require('_hlslens')
+lua require('_ufo')
+lua require('_leap')
 
 nnoremap <A-j> :m .+1<CR>==
 nnoremap <A-k> :m .-2<CR>==

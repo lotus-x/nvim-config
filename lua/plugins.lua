@@ -159,6 +159,12 @@ return require("packer").startup({
 
 		use("LudoPinelli/comment-box.nvim")
 
+		use({ "kevinhwang91/nvim-hlslens" })
+
+		use({ "kevinhwang91/nvim-ufo", requires = "kevinhwang91/promise-async" })
+
+		use({ "ggandor/leap.nvim" })
+
 		if packer_bootstrap then
 			require("packer").sync()
 		end

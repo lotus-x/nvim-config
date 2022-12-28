@@ -39,7 +39,7 @@ local on_attach = function(client, bufnr)
 	local lsp_formatting = function()
 		vim.lsp.buf.format({
 			filter = function(client)
-				print(client.name)
+				-- print(client.name)
 				-- check haskell
 				if client.name == "hls" and #vim.lsp.get_active_clients({ name = "hls", bufnr = bufnr }) > 0 then
 					return true
@@ -148,4 +148,9 @@ require("go").setup({
 	dap_debug_keymap = false,
 	lsp_keymaps = false,
 	icons = false,
+})
+require("lspconfig").golangci_lint_ls.setup({
+	on_attach = on_attach,
+	flags = lsp_flags,
+	capabilities = capabilities,
 })
