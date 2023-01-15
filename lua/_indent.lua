@@ -1,7 +1,9 @@
 vim.opt.termguicolors = true
 
-vim.cmd([[highlight IndentBlanklineIndent1 guibg=#e6e9ef gui=nocombine]])
-vim.cmd([[highlight IndentBlanklineIndent2 guibg=#eff1f5 gui=nocombine]])
+local color_pallete = require("catppuccin.palettes").get_palette()
+
+vim.cmd([[highlight IndentBlanklineIndent1 guibg=]] .. color_pallete.mantle .. [[ gui=nocombine]])
+vim.cmd([[highlight IndentBlanklineIndent2 guibg=]] .. color_pallete.base .. [[ gui=nocombine]])
 
 -- vim.opt.list = true
 -- vim.opt.listchars:append("space:⋅")

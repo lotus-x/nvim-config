@@ -1,5 +1,7 @@
 require("catppuccin").setup({
 	flavour = "latte",
+	-- flavour = "macchiato",
+	-- flavour = "mocha",
 	integrations = {
 		telescope = true,
 		beacon = true,
