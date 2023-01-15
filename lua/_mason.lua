@@ -19,7 +19,7 @@ require("mason-lspconfig").setup({
 		"cssls",
 		"cssmodules_ls",
 		"tsserver",
-		"golangci_lint_ls",
+		"yamlls",
 	},
 })
 
@@ -27,7 +27,6 @@ require("mason-null-ls").setup({
 	ensure_installed = {
 		"cspell",
 		"golangci_lint",
-		-- "revive",
 		"staticcheck",
 		"gofmt",
 		"goimports",

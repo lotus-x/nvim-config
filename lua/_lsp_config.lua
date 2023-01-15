@@ -149,7 +149,7 @@ require("go").setup({
 	lsp_keymaps = false,
 	icons = false,
 })
-require("lspconfig").golangci_lint_ls.setup({
+require("lspconfig").yamlls.setup({
 	on_attach = on_attach,
 	flags = lsp_flags,
 	capabilities = capabilities,

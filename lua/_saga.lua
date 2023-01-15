@@ -1,9 +1,13 @@
 local keymap = vim.keymap.set
-local saga = require("lspsaga")
 
-saga.init_lsp_saga({
-	custom_kind = require("catppuccin.groups.integrations.lsp_saga").custom_kind(),
-	code_action_lightbulb = {
+require("lspsaga").setup({
+	ui = {
+		kind = require("catppuccin.groups.integrations.lsp_saga").custom_kind(),
+	},
+	lightbulb = {
+		enable = false,
+	},
+	symbol_in_winbar = {
 		enable = false,
 	},
 })
@@ -27,10 +31,13 @@ keymap("n", "<leader>gr", "<cmd>Lspsaga rename<CR>", { silent = true })
 keymap("n", "<space>d", "<cmd>Lspsaga peek_definition<CR>", { silent = true })
 
 -- Show line diagnostics
-keymap("n", "<leader>cd", "<cmd>Lspsaga show_line_diagnostics<CR>", { silent = true })
+keymap("n", "<leader>sl", "<cmd>Lspsaga show_line_diagnostics<CR>", { silent = true })
 
 -- Show cursor diagnostic
-keymap("n", "<leader>cd", "<cmd>Lspsaga show_cursor_diagnostics<CR>", { silent = true })
+keymap("n", "<leader>sc", "<cmd>Lspsaga show_cursor_diagnostics<CR>", { silent = true })
+
+-- Show buffer diagnostic
+keymap("n", "<leader>sb", "<cmd>Lspsaga show_buf_diagnostics<CR>", { silent = true })
 
 -- Diagnsotic jump can use `<c-o>` to jump back
 keymap("n", "[e", "<cmd>Lspsaga diagnostic_jump_prev<CR>", { silent = true })
@@ -49,6 +56,10 @@ keymap("n", "<leader>o", "<cmd>LSoutlineToggle<CR>", { silent = true })
 
 -- Hover Doc
 keymap("n", "<space>k", "<cmd>Lspsaga hover_doc<CR>", { silent = true })
+
+-- Callhierarchy
+keymap("n", "<Leader>ci", "<cmd>Lspsaga incoming_calls<CR>")
+keymap("n", "<Leader>co", "<cmd>Lspsaga outgoing_calls<CR>")
 
 -- Float terminal
 -- keymap("n", "<space>t", "<cmd>Lspsaga open_floaterm<CR>", { silent = true })

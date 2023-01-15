@@ -35,7 +35,16 @@ null_ls.setup({
 		--                                 go                                 --
 		-- ------------------------------------------------------------------ --
 
-		-- null_ls.builtins.diagnostics.golangci_lint,
+		null_ls.builtins.diagnostics.golangci_lint.with({
+			args = {
+				"run",
+				"--fix=false",
+				-- "--fast",
+				"--out-format=json",
+				"--path-prefix",
+				"$ROOT",
+			},
+		}),
 		-- null_ls.builtins.diagnostics.revive,
 		null_ls.builtins.diagnostics.staticcheck,
 		null_ls.builtins.formatting.gofmt,
@@ -80,6 +89,9 @@ null_ls.setup({
 		-- null_ls.builtins.formatting.stylelint,
 	},
 	diagnostics_format = "[#{c}] #{m} (#{s})",
+	root_dir = function(fname)
+		return fname
+	end,
 })
 
 local lsp_formatting = function()

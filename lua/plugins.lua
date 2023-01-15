@@ -165,6 +165,13 @@ return require("packer").startup({
 
 		use({ "ggandor/leap.nvim" })
 
+		use({
+			"ThePrimeagen/harpoon",
+			requires = {
+				"nvim-lua/plenary.nvim",
+			},
+		})
+
 		if packer_bootstrap then
 			require("packer").sync()
 		end
