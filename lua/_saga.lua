@@ -2,6 +2,7 @@ local keymap = vim.keymap.set
 
 require("lspsaga").setup({
 	ui = {
+		border = "rounded",
 		colors = require("catppuccin.groups.integrations.lsp_saga").custom_colors(),
 		kind = require("catppuccin.groups.integrations.lsp_saga").custom_kind(),
 	},
